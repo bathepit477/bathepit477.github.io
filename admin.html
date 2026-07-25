@@ -1,288 +1,71 @@
 <!DOCTYPE html>
-<html lang="id" prefix="og:https://ogp.me/ns#">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmani Bike - Bengkel Sepeda Profesional di Blitar</title>
-    <meta name="description" content="Bengkel sepeda terpercaya di Kec. Gandusari, Blitar. Servis rutin, perbaikan, modifikasi, suku cadang asli. Harga transparan, pesan lewat WhatsApp 085231312055.">
-    <meta name="keywords" content="bengkel sepeda blitar, servis sepeda blitar, perbaikan sepeda gandusari, bengkel sepeda sukosewu, modifikasi sepeda blitar, harga servis sepeda">
-    <meta name="author" content="Harmani Bike">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://harmanibike.github.io/">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://harmanibike.github.io/">
-    <meta property="og:title" content="Harmani Bike - Bengkel Sepeda Terbaik di Blitar">
-    <meta property="og:description" content="Layanan lengkap sepeda standar internasional. Harga jelas, garansi memuaskan. Lokasi di Jl. Pancasila No.5, Sukosewu, Gandusari, Blitar.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80">
-    <meta property="og:locale" content="id_ID">
-    
-    <script type="application/ld+json">
-    {
-        "@context":"https://schema.org",
-        "@type":"BikeStore",
-        "name":"Harmani Bike",
-        "image":"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
-        "address":{"@type":"PostalAddress","streetAddress":"Jl. Pancasila No. 5, Desa Sukosewu, Kec. Gandusari","addressLocality":"Blitar","addressRegion":"Jawa Timur","postalCode":"66188","addressCountry":"ID"},
-        "telephone":"+6285231312055",
-        "openingHours":["Senin-Sabtu 08:00-17:00"],"priceRange":"Rp",
-        "areaServed":["Blitar","Gandusari","Sukosewu","Kediri","Tulungagung","Malang"],
-        "description":"Bengkel sepeda profesional melayani servis, perbaikan, dan modifikasi semua jenis sepeda di Blitar.",
-        "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"128"}
-    }
-    </script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Pengaturan Admin - Harmani Bike Blitar</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {--utama:#165DFF; --aksen:#FF7D00; --gelap:#1E293B; --terang:#F8FAFC; --abu:#94A3B8; --bayangan:0 12px 40px rgba(22,93,255,0.18); --putih:#FFFFFF;}
         *{margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif;}
-        html{scroll-behavior:smooth;}
-        body{color:var(--gelap); background:var(--putih); line-height:1.7; font-size:16px;}
-        .wadah{width:100%; max-width:1200px; margin:0 auto; padding:0 20px;}
-        
-        header{position:fixed; width:100%; top:0; left:0; background:rgba(255,255,255,0.97); backdrop-filter:blur(12px); box-shadow:0 2px 15px rgba(0,0,0,0.06); z-index:999; transition:all 0.3s ease;}
-        .navigasi{display:flex; justify-content:space-between; align-items:center; padding:14px 0;}
-        .logo{font-size:24px; font-weight:800; color:var(--utama); text-decoration:none; display:flex; align-items:center; gap:8px;}
-        .logo i{font-size:28px;}
-        .menu-link{display:flex; list-style:none; gap:28px;}
-        .menu-link a{text-decoration:none; color:var(--gelap); font-weight:500; transition:color 0.3s ease; position:relative;}
-        .menu-link a:hover{color:var(--utama);}
-        .menu-link a::after{content:''; position:absolute; bottom:-5px; left:0; width:0; height:2px; background:var(--utama); transition:width 0.3s ease;}
-        .menu-link a:hover::after{width:100%;}
-        .tombol-pesan{background:var(--utama); color:var(--putih)!important; padding:10px 22px; border-radius:10px;}
-        .tombol-pesan:hover{background:#0F4CDD; color:var(--putih)!important; transform:translateY(-2px);}
-        .tombol-menu{display:none; font-size:26px; cursor:pointer; color:var(--gelap);}
-        
-        .hero{padding:150px 0 100px; background:linear-gradient(135deg,#EFF6FF 0%,#F0FDF4 100%); position:relative; overflow:hidden;}
-        .hero-baris{display:flex; align-items:center; gap:50px; flex-wrap:wrap;}
-        .hero-teks{flex:1 1 450px;}
-        .hero-teks h1{font-size:48px; line-height:1.2; margin-bottom:20px;}
-        .hero-teks h1 span{color:var(--utama);}
-        .hero-teks p{font-size:18px; color:#475569; margin-bottom:30px; max-width:580px;}
-        .tombol{padding:14px 28px; border-radius:12px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer; transition:all 0.3s ease; font-size:16px;}
-        .tombol-utama{background:var(--utama); color:var(--putih);}
-        .tombol-utama:hover{transform:translateY(-4px); box-shadow:var(--bayangan);}
-        .tombol-kedua{background:var(--putih); color:var(--utama); border:2px solid var(--utama);}
-        .tombol-kedua:hover{background:var(--utama); color:var(--putih);}
-        .hero-gambar{flex:1 1 450px; position:relative;}
-        .hero-gambar img{width:100%; border-radius:20px; box-shadow:0 20px 50px rgba(0,0,0,0.12);}
-        .jam-buka{position:absolute; bottom:-20px; left:50%; transform:translateX(-50%); background:var(--putih); padding:12px 24px; border-radius:50px; box-shadow:0 5px 20px rgba(0,0,0,0.08); font-weight:600; font-size:14px; display:flex; align-items:center; gap:8px;}
-        .jam-buka i{color:#10B981; font-size:18px;}
-        
-        section{padding:80px 0;}
-        .judul-bagian{text-align:center; margin-bottom:60px;}
-        .judul-bagian h2{font-size:36px; margin-bottom:15px; color:var(--gelap);}
-        .judul-bagian p{font-size:17px; color:var(--abu); max-width:650px; margin:0 auto;}
-        
-        .grid-layanan{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;}
-        .kartu-layanan{background:var(--putih); padding:35px 28px; border-radius:18px; box-shadow:0 5px 20px rgba(0,0,0,0.05); transition:all 0.3s ease; border:1px solid #F1F5F9;}
-        .kartu-layanan:hover{transform:translateY(-8px); box-shadow:0 15px 35px rgba(22,93,255,0.12);}
-        .ikon-layanan{width:65px; height:65px; background:rgba(22,93,255,0.1); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:28px; color:var(--utama); margin-bottom:22px;}
-        .kartu-layanan h3{font-size:21px; margin-bottom:12px; color:var(--gelap);}
-        .kartu-layanan p{color:var(--abu); font-size:15px; line-height:1.8;}
-        
-        .bagian-harga{background:var(--terang);}
-        .grid-harga{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px;}
-        .kartu-harga{background:var(--putih); border-radius:18px; padding:38px; box-shadow:0 5px 20px rgba(0,0,0,0.05); transition:all 0.3s ease; position:relative; overflow:hidden;}
-        .kartu-harga:hover{transform:translateY(-6px); box-shadow:0 15px 35px rgba(22,93,255,0.15);}
-        .kartu-harga.populer{border:2px solid var(--utama);}
-        .label-populer{position:absolute; top:22px; right:-32px; background:var(--utama); color:var(--putih); padding:6px 42px; transform:rotate(45deg); font-size:12px; font-weight:700;}
-        .kepala-harga{text-align:center; margin-bottom:28px;}
-        .nama-paket{font-size:23px; font-weight:800; margin-bottom:10px;}
-        .nilai-harga{font-size:34px; font-weight:900; color:var(--utama); margin-bottom:8px;}
-        .deskripsi-paket{color:var(--abu); font-size:14px;}
-        .daftar-fitur{list-style:none; margin:28px 0;}
-        .daftar-fitur li{padding:11px 0; border-bottom:1px solid #F1F5F9; display:flex; align-items:center; gap:10px; font-size:15px;}
-        .daftar-fitur li i{color:#10B981; font-size:17px;}
-        
-        .grid-galeri{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
-        .galeri-item{border-radius:14px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.08); transition:transform 0.3s ease;}
-        .galeri-item:hover{transform:scale(1.03);}
-        .galeri-item img{width:100%; height:200px; object-fit:cover;}
-        .grid-testi{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px;}
-        .kartu-testi{background:var(--terang); padding:30px; border-radius:16px; border-left:4px solid var(--utama);}
-        .bintang{color:#FBBF24; margin-bottom:12px;}
-        .nama-testi{font-weight:700; margin-top:15px; color:var(--gelap);}
-        .asal-testi{font-size:14px; color:var(--abu);}
-        
-        .bagian-dua{display:flex; gap:40px; flex-wrap:wrap;}
-        .peta{flex:1 1 450px; border-radius:16px; overflow:hidden; box-shadow:0 5px 20px rgba(0,0,0,0.08); min-height:400px;}
-        .peta iframe{width:100%; height:100%; border:none;}
-        .form-pesan{flex:1 1 450px; background:var(--putih); padding:35px; border-radius:16px; box-shadow:var(--bayangan);}
-        .grup-form{margin-bottom:20px;}
-        .grup-form label{display:block; margin-bottom:8px; font-weight:500; color:var(--gelap);}
-        .grup-form input,.grup-form select,.grup-form textarea{width:100%; padding:13px 16px; border:1px solid #CBD5E1; border-radius:10px; font-size:15px; transition:border-color 0.3s ease;}
-        .grup-form input:focus,.grup-form select:focus,.grup-form textarea:focus{outline:none; border-color:var(--utama);}
-        .info-kontak{background:var(--utama); color:var(--putih); padding:30px; border-radius:16px; margin-top:25px;}
-        .info-item{display:flex; align-items:flex-start; gap:15px; margin-bottom:18px;}
-        .info-item i{font-size:20px; margin-top:3px;}
-        
-        footer{background:var(--gelap); color:var(--putih); padding:70px 0 25px;}
-        .grid-footer{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; margin-bottom:45px;}
-        .kolom-footer h4{margin-bottom:22px; font-size:19px;}
-        .kolom-footer p,.kolom-footer a{color:#CBD5E1; text-decoration:none; display:block; margin-bottom:11px; transition:color 0.3s ease;}
-        .kolom-footer a:hover{color:var(--putih); padding-left:5px;}
-        .hak-cipta{text-align:center; padding-top:25px; border-top:1px solid #334155; color:#94A3B8; font-size:14px;}
-        
-        .wa-mengambang{position:fixed; bottom:30px; right:30px; width:62px; height:62px; background:#25D366; color:var(--putih); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:32px; box-shadow:0 5px 25px rgba(37,211,102,0.45); z-index:998; transition:all 0.3s ease; text-decoration:none;}
-        .wa-mengambang:hover{transform:scale(1.15);}
-        .tautan-admin{position:fixed; bottom:30px; left:30px; background:var(--gelap); color:var(--putih); padding:12px 18px; border-radius:10px; text-decoration:none; font-size:14px; z-index:998; transition:background 0.3s ease;}
-        .tautan-admin:hover{background:#334155;}
-        
-        @media (max-width:992px){
-            .hero-baris,.bagian-dua{flex-direction:column;}
-            .hero-gambar{order:-1;}
-            .hero-teks h1{font-size:40px;}
-        }
-        @media (max-width:768px){
-            .tombol-menu{display:block;}
-            .menu-link{position:fixed; top:85px; left:-100%; width:100%; height:calc(100vh - 85px); background:var(--putih); flex-direction:column; padding:45px 25px; gap:25px; transition:left 0.3s ease;}
-            .menu-link.aktif{left:0;}
-            .menu-link a{font-size:18px;}
-            .hero-teks h1{font-size:32px;}
-            .judul-bagian h2{font-size:28px;}
-            .jam-buka{position:static; transform:none; margin-top:20px;}
-            .wa-mengambang{width:55px; height:55px; font-size:28px; bottom:20px; right:20px;}
-            .tautan-admin{left:20px; bottom:20px;}
-        }
+        body{background:#F8FAFC; padding:30px 20px; max-width:900px; margin:0 auto;}
+        .judul{text-align:center; margin-bottom:40px;}
+        .judul h1{color:#165DFF; margin-bottom:10px;}
+        .kotak{background:#fff; border-radius:16px; padding:30px; margin-bottom:25px; box-shadow:0 5px 20px rgba(0,0,0,0.05);}
+        .kotak h3{margin-bottom:20px; color:#1E293B; border-bottom:1px solid #E2E8F0; padding-bottom:10px;}
+        .grup{margin-bottom:18px;}
+        label{display:block; margin-bottom:8px; font-weight:500; color:#334155;}
+        input,textarea,select{width:100%; padding:12px; border:1px solid #CBD5E1; border-radius:10px; font-size:15px;}
+        .tombol{padding:12px 24px; border:none; border-radius:10px; font-weight:600; cursor:pointer; transition:0.3s; font-size:15px; margin-right:10px; margin-top:10px;}
+        .tombol-biru{background:#165DFF; color:#fff;}
+        .tombol-hijau{background:#10B981; color:#fff;}
+        .tombol-merah{background:#EF4444; color:#fff;}
+        .paket-item{border:1px solid #E2E8F0; border-radius:12px; padding:20px; margin-bottom:15px; background:#FAFBFC;}
+        .baris-fitur{display:flex; gap:10px; margin-bottom:8px;}
+        .baris-fitur input{flex:1;}
+        .login{max-width:420px; margin:60px auto; text-align:center; padding:35px; background:#fff; border-radius:16px; box-shadow:0 5px 20px rgba(0,0,0,0.05);}
+        .login input{text-align:center; font-size:17px; margin-bottom:15px;}
+        .pesan{padding:12px; border-radius:10px; margin-bottom:15px; display:none;}
+        .pesan.sukses{background:#D1FAE5; color:#065F46;}
+        .pesan.gagal{background:#FEE2E2; color:#991B1B;}
+        .sembunyi{display:none;}
     </style>
 </head>
 <body>
-    <header>
-        <div class="wadah">
-            <nav class="navigasi">
-                <a href="#" class="logo"><i class="fa fa-bicycle"></i> Harmani Bike</a>
-                <ul class="menu-link" id="menuUtama">
-                    <li><a href="#beranda">Beranda</a></li>
-                    <li><a href="#layanan">Layanan</a></li>
-                    <li><a href="#harga">Daftar Harga</a></li>
-                    <li><a href="#galeri">Galeri</a></li>
-                    <li><a href="#pesan" class="tombol-pesan">Pesan Servis</a></li>
-                </ul>
-                <div class="tombol-menu" id="tombolMenu"><i class="fa fa-bars"></i></div>
-            </nav>
-        </div>
-    </header>
+    <div class="login" id="halamanLogin">
+        <h2>Masuk Pengaturan Admin</h2>
+        <p style="margin:15px 0; color:#64748B;">Masukkan kata sandi untuk mengubah data website</p>
+        <input type="password" id="sandiAdmin" placeholder="Kata sandi admin">
+        <br><button class="tombol tombol-biru" onclick="cekSandi()">Masuk Sekarang</button>
+    </div>
 
-    <section class="hero" id="beranda">
-        <div class="wadah">
-            <div class="hero-baris">
-                <div class="hero-teks">
-                    <h1>Bengkel Sepeda <span>Terpercaya</span> di Blitar</h1>
-                    <p>Teknisi berpengalaman, peralatan lengkap, suku cadang asli, harga transparan. Melayani semua jenis sepeda di Desa Sukosewu, Kecamatan Gandusari, Blitar.</p>
-                    <div style="display:flex; gap:15px; flex-wrap:wrap;">
-                        <a href="#harga" class="tombol tombol-kedua"><i class="fa fa-tags"></i> Lihat Harga</a>
-                        <a href="#pesan" class="tombol tombol-utama"><i class="fa fa-calendar-check-o"></i> Pesan Sekarang</a>
-                    </div>
-                </div>
-                <div class="hero-gambar">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="Bengkel sepeda Harmani Bike Blitar">
-                    <div class="jam-buka"><i class="fa fa-clock-o"></i> <span id="jamBukaUtama">Senin-Sabtu 08.00 - 17.00</span></div>
-                </div>
-            </div>
+    <div id="halamanAdmin" class="sembunyi">
+        <div class="judul">
+            <h1><i class="fa fa-cogs"></i> Pengaturan Harmani Bike Blitar</h1>
+            <p>Perubahan akan langsung tampil di website</p>
+            <a href="index.html" style="display:inline-block; margin-top:10px; color:#165DFF;"><i class="fa fa-arrow-left"></i> Kembali ke Website</a>
         </div>
-    </section>
 
-    <section id="layanan">
-        <div class="wadah">
-            <div class="judul-bagian">
-                <h2>Layanan Kami</h2>
-                <p>Proses kerja teliti, hasil memuaskan, dan bergaransi</p>
-            </div>
-            <div class="grid-layanan">
-                <div class="kartu-layanan"><div class="ikon-layanan"><i class="fa fa-wrench"></i></div><h3>Servis Rutin</h3><p>Pembersihan, pelumasan, penyetelan rem & gigi, serta pemeriksaan kondisi umum.</p></div>
-                <div class="kartu-layanan"><div class="ikon-layanan"><i class="fa fa-exchange"></i></div><h3>Perbaikan & Penggantian</h3><p>Perbaikan kerusakan rangka, roda, suspensi, hingga penggantian suku cadang asli.</p></div>
-                <div class="kartu-layanan"><div class="ikon-layanan"><i class="fa fa-magic"></i></div><h3>Modifikasi & Perakitan</h3><p>Merakit sepeda impian atau memodifikasi untuk performa lebih maksimal.</p></div>
-                <div class="kartu-layanan"><div class="ikon-layanan"><i class="fa fa-home"></i></div><h3>Konsultasi Gratis</h3><p>Silakan tanya kebutuhan sepeda Anda secara langsung di bengkel.</p></div>
-            </div>
+        <div class="pesan sukses" id="pesanSukses"><i class="fa fa-check-circle"></i> Data berhasil disimpan!</div>
+        <div class="pesan gagal" id="pesanGagal"><i class="fa fa-exclamation-triangle"></i> Gagal menyimpan data!</div>
+
+        <div class="kotak">
+            <h3>Informasi Umum Bengkel</h3>
+            <div class="grup"><label>Jam Operasional</label><input type="text" id="inputJam" placeholder="Contoh: Senin-Sabtu 08.00 - 17.00 | Minggu Libur"></div>
+            <div class="grup"><label>Alamat Lengkap</label><input type="text" id="inputAlamat" value="Jl. Pancasila No. 5, Desa Sukosewu, Kec. Gandusari, Kab. Blitar"></div>
         </div>
-    </section>
 
-    <section class="bagian-harga" id="harga">
-        <div class="wadah">
-            <div class="judul-bagian">
-                <h2>Daftar Harga Layanan</h2>
-                <p>Harga jelas tanpa biaya tersembunyi, terjangkau untuk semua kalangan</p>
-            </div>
-            <div class="grid-harga" id="wadahHarga">
-                <div style="text-align:center; padding:50px; color:var(--abu);">Memuat daftar harga...</div>
-            </div>
+        <div class="kotak">
+            <h3>Daftar Paket & Harga</h3>
+            <div id="wadahPaket"></div>
+            <button class="tombol tombol-biru" onclick="tambahPaket()"><i class="fa fa-plus"></i> Tambah Paket Baru</button>
         </div>
-    </section>
 
-    <section id="galeri">
-        <div class="wadah">
-            <div class="judul-bagian">
-                <h2>Galeri Hasil Kerja</h2>
-                <p>Kebersihan dan ketelitian adalah prioritas utama kami</p>
-            </div>
-            <div class="grid-galeri">
-                <div class="galeri-item"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80" alt="Perbaikan roda sepeda"></div>
-                <div class="galeri-item"><img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=500&q=80" alt="Servis lengkap sepeda MTB"></div>
-                <div class="galeri-item"><img src="https://images.unsplash.com/photo-1505705694346-8c635c7f4a48?auto=format&fit=crop&w=500&q=80" alt="Modifikasi sepeda balap"></div>
-                <div class="galeri-item"><img src="https://images.unsplash.com/photo-1541625247381-26c815305733?auto=format&fit=crop&w=500&q=80" alt="Perakitan sepeda baru"></div>
-            </div>
-            
-            <div class="judul-bagian" style="margin-top:80px;">
-                <h2>Apa Kata Pelanggan</h2>
-            </div>
-            <div class="grid-testi">
-                <div class="kartu-testi"><div class="bintang"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><p>"Pelayanan sangat ramah, hasil servis sepeda jadi sangat ringan. Harga sangat masuk akal."</p><div class="nama-testi">Budi Santoso</div><div class="asal-testi">Pelanggan dari Gandusari</div></div>
-                <div class="kartu-testi"><div class="bintang"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div><p>"Lokasi mudah dicari di Jl. Pancasila Sukosewu, proses cepat dan bisa pesan lewat WhatsApp."</p><div class="nama-testi">Siti Aminah</div><div class="asal-testi">Pengguna sepeda lipat</div></div>
-            </div>
+        <div style="text-align:center; margin-top:30px;">
+            <button class="tombol tombol-hijau" onclick="simpanSemua()"><i class="fa fa-cloud-upload"></i> Simpan ke Database</button>
+            <button class="tombol tombol-merah" onclick="keluar()"><i class="fa fa-sign-out"></i> Keluar</button>
         </div>
-    </section>
-
-    <section id="pesan">
-        <div class="wadah">
-            <div class="judul-bagian">
-                <h2>Lokasi & Pesan Servis</h2>
-                <p>Kunjungi bengkel kami atau pesan layanan lewat formulir di bawah ini</p>
-            </div>
-            <div class="bagian-dua">
-                <div class="peta">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31641.23456789!2d112.156789!3d-8.234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e783456789abcdef%3A0x1234567890abcdef!2sSukosewu%2C%20Kec.%20Gandusari%2C%20Kab.%20Blitar%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1721900000000!5m2!1sid!2sid" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="form-pesan">
-                    <h3 style="margin-bottom:20px;">Formulir Pemesanan</h3>
-                    <form id="formPesan">
-                        <div class="grup-form"><label>Nama Lengkap</label><input type="text" id="nama" required placeholder="Masukkan nama Anda"></div>
-                        <div class="grup-form"><label>Nomor WhatsApp</label><input type="tel" id="noWa" required placeholder="Contoh: 085231312055"></div>
-                        <div class="grup-form"><label>Jenis Sepeda</label><select id="jenisSepeda" required><option value="">Pilih jenis sepeda</option><option>Sepeda Gunung (MTB)</option><option>Sepeda Balap</option><option>Sepeda Lipat</option><option>Sepeda Kota</option><option>Sepeda Listrik</option><option>Lainnya</option></select></div>
-                        <div class="grup-form"><label>Pilih Paket Layanan</label><select id="pilihPaket" required><option value="">Memuat paket...</option></select></div>
-                        <div class="grup-form"><label>Tanggal Kunjungan</label><input type="date" id="tanggal" required></div>
-                        <div class="grup-form"><label>Keterangan Tambahan</label><textarea id="keterangan" placeholder="Jelaskan keluhan atau kebutuhan khusus"></textarea></div>
-                        <button type="submit" class="tombol tombol-utama" style="width:100%"><i class="fa fa-whatsapp"></i> Kirim Pesanan ke WhatsApp</button>
-                    </form>
-                    <div class="info-kontak">
-                        <h4 style="margin-bottom:15px;">Info Bengkel</h4>
-                        <div class="info-item"><i class="fa fa-map-marker"></i><div><strong>Alamat</strong><p id="alamatUtama">Jl. Pancasila No. 5, Desa Sukosewu, Kec. Gandusari, Kab. Blitar</p></div></div>
-                        <div class="info-item"><i class="fa fa-phone"></i><div><strong>WhatsApp</strong><p>0852-3131-2055</p></div></div>
-                        <div class="info-item"><i class="fa fa-clock-o"></i><div><strong>Jam Buka</strong><p id="jamBukaInfo">Senin-Sabtu: 08.00 - 17.00<br>Minggu: Libur</p></div></div>
-                        <div class="info-item"><i class="fa fa-shield"></i><div><strong>Garansi</strong><p>Garansi hasil perbaikan 7 hari setelah pengambilan</p></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="kontak">
-        <div class="wadah">
-            <div class="grid-footer">
-                <div class="kolom-footer"><h4>Harmani Bike</h4><p>Bengkel sepeda terpercaya di Kecamatan Gandusari, Blitar. Melayani dengan hati dan keahlian terbaik.</p></div>
-                <div class="kolom-footer"><h4>Kontak</h4><a href="tel:+6285231312055"><i class="fa fa-phone"></i> 0852-3131-2055</a><a href="https://wa.me/6285231312055" target="_blank"><i class="fa fa-whatsapp"></i> Chat WhatsApp</a></div>
-                <div class="kolom-footer"><h4>Tautan Cepat</h4><a href="#beranda">Beranda</a><a href="#layanan">Layanan</a><a href="#harga">Daftar Harga</a><a href="admin.html">Pengaturan Admin</a></div>
-            </div>
-            <div class="hak-cipta">&copy; 2026 Harmani Bike - Bengkel Sepeda Blitar. Semua Hak Dilindungi.</div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/6285231312055?text=Halo%20Harmani%20Bike%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20servis%20sepeda" target="_blank" class="wa-mengambang" title="Hubungi Kami"><i class="fa fa-whatsapp"></i></a>
-    <a href="admin.html" class="tautan-admin"><i class="fa fa-cog"></i> Pengaturan</a>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
@@ -297,76 +80,66 @@
             appId: "1:1044181656443:web:d62e7cfe222519a88ed3de"
         };
 
+        const SANDI_ADMIN = "bengkel123";
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
         const ref = db.ref('konten_website');
 
-        const dataAwal = {
-            jamBuka: "Senin-Sabtu: 08.00 - 17.00 | Minggu Libur",
-            alamat: "Jl. Pancasila No. 5, Desa Sukosewu, Kec. Gandusari, Kab. Blitar, Jawa Timur",
-            daftarHarga: [
-                {nama:"Servis Ringan", harga:"Rp 35.000", desc:"Pengecekan dasar", populer:false, fitur:["Pelumasan rantai","Penyetelan rem","Pengecekan tekanan ban"]},
-                {nama:"Servis Lengkap", harga:"Rp 75.000", desc:"Paling banyak dipilih", populer:true, fitur:["Semua layanan ringan","Bersihkan & lumasi gir","Stel gigi halus","Cek kelonggaran baut"]},
-                {nama:"Servis Premium", harga:"Rp 120.000", desc:"Perawatan maksimal", populer:false, fitur:["Semua layanan lengkap","Bongkar bersih total","Ganti oli suspensi","Garansi 14 hari"]}
-            ]
-        };
+        function cekSandi(){
+            const sandi = document.getElementById('sandiAdmin').value;
+            if(sandi === SANDI_ADMIN){
+                document.getElementById('halamanLogin').classList.add('sembunyi');
+                document.getElementById('halamanAdmin').classList.remove('sembunyi');
+                ambilData();
+            }else{
+                alert("Kata sandi salah!");
+            }
+        }
 
-        ref.on('value', (snapshot) => {
-            const data = snapshot.val() || dataAwal;
-            document.getElementById('jamBukaUtama').textContent = data.jamBuka;
-            document.getElementById('jamBukaInfo').innerHTML = data.jamBuka.replace('|','<br>');
-            document.getElementById('alamatUtama').textContent = data.alamat;
-            
-            const wadah = document.getElementById('wadahHarga');
-            const pilihPaket = document.getElementById('pilihPaket');
+        function ambilData(){
+            ref.once('value').then(snap => {
+                const data = snap.val() || {
+                    jamBuka: "Senin-Sabtu: 08.00 - 17.00 | Minggu Libur",
+                    alamat: "Jl. Pancasila No. 5, Desa Sukosewu, Kec. Gandusari, Kab. Blitar",
+                    daftarHarga: [
+                        {nama:"Servis Ringan", harga:"Rp 35.000", desc:"Pengecekan dasar", populer:false, fitur:["Pelumasan rantai","Penyetelan rem","Pengecekan ban"]},
+                        {nama:"Servis Lengkap", harga:"Rp 75.000", desc:"Paling banyak dipilih", populer:true, fitur:["Semua layanan ringan","Bersihkan gir","Stel gigi halus"]},
+                        {nama:"Servis Premium", harga:"Rp 120.000", desc:"Perawatan maksimal", populer:false, fitur:["Semua lengkap","Bongkar bersih total","Ganti oli suspensi"]}
+                    ]
+                };
+                document.getElementById('inputJam').value = data.jamBuka;
+                document.getElementById('inputAlamat').value = data.alamat;
+                tampilkanPaket(data.daftarHarga);
+            });
+        }
+
+        function tampilkanPaket(list){
+            const wadah = document.getElementById('wadahPaket');
             wadah.innerHTML = "";
-            pilihPaket.innerHTML = `<option value="">Pilih Paket Layanan</option>`;
-
-            data.daftarHarga.forEach(paket => {
-                const kartu = document.createElement('div');
-                kartu.className = `kartu-harga ${paket.popular ? 'populer' : ''}`;
-                kartu.innerHTML = `
-                    ${paket.popular ? '<div class="label-populer">TERPOPULER</div>' : ''}
-                    <div class="kepala-harga">
-                        <h3 class="nama-paket">${paket.nama}</h3>
-                        <div class="nilai-harga">${paket.harga}</div>
-                        <p class="deskripsi-paket">${paket.desc}</p>
+            list.forEach((p, i) => {
+                const el = document.createElement('div');
+                el.className = "paket-item";
+                el.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                        <h4>Paket ${i+1}</h4>
+                        <button class="tombol tombol-merah" style="padding:6px 12px; font-size:13px;" onclick="hapusPaket(${i})"><i class="fa fa-trash"></i> Hapus</button>
                     </div>
-                    <ul class="daftar-fitur">
-                        ${paket.fitur.map(f => `<li><i class="fa fa-check-circle"></i> ${f}</li>`).join('')}
-                    </ul>
-                    <a href="#pesan" class="tombol tombol-utama">Pilih Paket Ini</a>
+                    <div class="grup"><label>Nama Paket</label><input type="text" class="nama" value="${p.nama}"></div>
+                    <div class="grup"><label>Harga</label><input type="text" class="harga" value="${p.harga}"></div>
+                    <div class="grup"><label>Deskripsi</label><input type="text" class="desc" value="${p.desc}"></div>
+                    <div class="grup"><label>Tampilkan Populer?</label><select class="populer"><option value="true" ${p.popular ? 'selected' : ''}>Ya</option><option value="false" ${p.popular ? '' : 'selected'}>Tidak</option></select></div>
+                    <div class="grup"><label>Daftar Fitur</label>
+                        <div class="daftar-fitur">
+                            ${p.fitur.map(f => `<div class="baris-fitur"><input type="text" class="input-fitur" value="${f}"><button class="tombol tombol-merah" style="padding:8px 10px;" onclick="this.parentElement.remove()"><i class="fa fa-times"></i></button></div>`).join('')}
+                        </div>
+                        <button class="tombol tombol-biru" style="padding:8px 12px; font-size:13px; margin-top:5px;" onclick="tambahFitur(this)"><i class="fa fa-plus"></i> Tambah Fitur</button>
+                    </div>
                 `;
-                wadah.appendChild(kartu);
-                pilihPaket.innerHTML += `<option value="${paket.nama} - ${paket.harga}">${paket.nama} (${paket.harga})</option>`;
+                wadah.appendChild(el);
             });
-        });
+        }
 
-        document.getElementById('tombolMenu').addEventListener('click', () => {
-            document.getElementById('menuUtama').classList.toggle('aktif');
-        });
-        document.querySelectorAll('.menu-link a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('menuUtama').classList.remove('aktif');
-            });
-        });
-
-        document.getElementById('formPesan').addEventListener('submit', e => {
-            e.preventDefault();
-            const pesan = `*PESANAN SERVIS SEPEDA - HARMANI BIKE BLITAR*
-
-Nama: ${document.getElementById('nama').value}
-No. WhatsApp: ${document.getElementById('noWa').value}
-Jenis Sepeda: ${document.getElementById('jenisSepeda').value}
-Paket Layanan: ${document.getElementById('pilihPaket').value}
-Tanggal Kunjungan: ${document.getElementById('tanggal').value}
-
-Keterangan Tambahan:
-${document.getElementById('keterangan').value || '-'}
-
-Mohon konfirmasi ketersediaan. Terima kasih.`;
-            window.open(`https://wa.me/6285231312055?text=${encodeURIComponent(pesan)}`, '_blank');
-        });
-    </script>
-</body>
-</html>
+        function tambahPaket(){
+            ref.once('value').then(snap => {
+                const data = snap.val() || {daftarHarga:[]};
+                data.daftarHarga.push({nama
