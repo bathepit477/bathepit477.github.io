@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengaturan Admin - Harmani Bike Blitar</title>
+    <title>Pengaturan Admin - Harmani Bike</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -42,8 +42,8 @@
 
     <div id="halamanAdmin" class="sembunyi">
         <div class="judul">
-            <h1><i class="fa fa-cogs"></i> Pengaturan Harmani Bike Blitar</h1>
-            <p>Perubahan akan langsung tampil di website</p>
+            <h1><i class="fa fa-cogs"></i> Pengaturan Website Harmani Bike</h1>
+            <p>Perubahan akan langsung tampil di seluruh pengunjung website</p>
             <a href="index.html" style="display:inline-block; margin-top:10px; color:#165DFF;"><i class="fa fa-arrow-left"></i> Kembali ke Website</a>
         </div>
 
@@ -53,7 +53,7 @@
         <div class="kotak">
             <h3>Informasi Umum Bengkel</h3>
             <div class="grup"><label>Jam Operasional</label><input type="text" id="inputJam" placeholder="Contoh: Senin-Sabtu 08.00 - 17.00 | Minggu Libur"></div>
-            <div class="grup"><label>Alamat Lengkap</label><input type="text" id="inputAlamat" value="Jl. Pancasila No. 5, Desa Sukosewu, Kec. Gandusari, Kab. Blitar"></div>
+            <div class="grup"><label>Alamat Lengkap</label><input type="text" id="inputAlamat" placeholder="Alamat bengkel lengkap"></div>
         </div>
 
         <div class="kotak">
@@ -103,7 +103,7 @@
             ref.once('value').then(snap => {
                 const data = snap.val() || {
                     jamBuka: "Senin-Sabtu: 08.00 - 17.00 | Minggu Libur",
-                    alamat: "Jl. Pancasila No. 5, Desa Sukosewu, Kec. Gandusari, Kab. Blitar",
+                    alamat: "Jl. Sepeda Sejahtera No.12, Kec. Kota, Kediri",
                     daftarHarga: [
                         {nama:"Servis Ringan", harga:"Rp 35.000", desc:"Pengecekan dasar", populer:false, fitur:["Pelumasan rantai","Penyetelan rem","Pengecekan ban"]},
                         {nama:"Servis Lengkap", harga:"Rp 75.000", desc:"Paling banyak dipilih", populer:true, fitur:["Semua layanan ringan","Bersihkan gir","Stel gigi halus"]},
@@ -130,18 +130,4 @@
                     <div class="grup"><label>Nama Paket</label><input type="text" class="nama" value="${p.nama}"></div>
                     <div class="grup"><label>Harga</label><input type="text" class="harga" value="${p.harga}"></div>
                     <div class="grup"><label>Deskripsi</label><input type="text" class="desc" value="${p.desc}"></div>
-                    <div class="grup"><label>Tampilkan Populer?</label><select class="populer"><option value="true" ${p.popular ? 'selected' : ''}>Ya</option><option value="false" ${p.popular ? '' : 'selected'}>Tidak</option></select></div>
-                    <div class="grup"><label>Daftar Fitur</label>
-                        <div class="daftar-fitur">
-                            ${p.fitur.map(f => `<div class="baris-fitur"><input type="text" class="input-fitur" value="${f}"><button class="tombol tombol-merah" style="padding:8px 10px;" onclick="this.parentElement.remove()"><i class="fa fa-times"></i></button></div>`).join('')}
-                        </div>
-                        <button class="tombol tombol-biru" style="padding:8px 12px; font-size:13px; margin-top:5px;" onclick="tambahFitur(this)"><i class="fa fa-plus"></i> Tambah Fitur</button>
-                    </div>
-                `;
-                wadah.appendChild(el);
-            });
-        }
-
-        function tambahPaket(){
-            ref.once('value').then(snap => {
-                const data
+                    <div class="grup"><label>Tampilkan Populer?</label><select class="populer"><option value="true" ${p.popular
