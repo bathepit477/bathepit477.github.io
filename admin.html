@@ -37,6 +37,7 @@
         <p style="margin:15px 0; color:#64748B;">Masukkan kata sandi untuk mengubah data website</p>
         <input type="password" id="sandiAdmin" placeholder="Kata sandi admin">
         <br><button class="tombol tombol-biru" onclick="cekSandi()">Masuk Sekarang</button>
+        <p style="margin-top:20px; font-size:13px; color:#94A3B8;">Sandi awal: <b>bengkel123</b></p>
     </div>
 
     <div id="halamanAdmin" class="sembunyi">
@@ -70,6 +71,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
     <script>
+        // ==== TEMPEL KONFIGURASI FIREBASE ANDA YANG SAMA ====
         const firebaseConfig = {
   apiKey: "AIzaSyDFyjlzBDBZ4nXe8zTgNGdrKC4L9W--ImE",
   authDomain: "harmanibike.firebaseapp.com",
@@ -79,6 +81,7 @@
   messagingSenderId: "1044181656443",
   appId: "1:1044181656443:web:d62e7cfe222519a88ed3de"
 };
+        // ======================================================
 
         const SANDI_ADMIN = "bengkel123";
         firebase.initializeApp(firebaseConfig);
@@ -86,14 +89,14 @@
         const ref = db.ref('konten_website');
 
         function cekSandi(){
-            //const sandi = document.getElementById('sandiAdmin').value;
-            //if(sandi === SANDI_ADMIN){
+            const sandi = document.getElementById('sandiAdmin').value;
+            if(sandi === SANDI_ADMIN){
                 document.getElementById('halamanLogin').classList.add('sembunyi');
                 document.getElementById('halamanAdmin').classList.remove('sembunyi');
                 ambilData();
-            //}else{
-                //alert("Kata sandi salah!");
-            //}
+            }else{
+                alert("Kata sandi salah!");
+            }
         }
 
         function ambilData(){
@@ -141,5 +144,4 @@
 
         function tambahPaket(){
             ref.once('value').then(snap => {
-                const data = snap.val() || {daftarHarga:[]};
-                data.daftarHarga.push({nama
+                const data
