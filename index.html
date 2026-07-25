@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProCycle Workshop - Bengkel Sepeda Profesional & Terpercaya</title>
+    <meta name="description" content="Bengkel sepeda standar internasional di Kediri. Daftar harga transparan, layanan servis rutin, perbaikan, modifikasi. Pesan mudah lewat WhatsApp.">
+    <meta name="keywords" content="bengkel sepeda kediri, harga servis sepeda, servis sepeda murah, perbaikan sepeda, modifikasi sepeda, suku cadang sepeda">
+    <meta name="author" content="ProCycle Workshop">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://procycleworkshop.com">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://procycleworkshop.com">
+    <meta property="og:title" content="ProCycle Workshop - Daftar Harga Servis Sepeda">
+    <meta property="og:description" content="Layanan lengkap dengan harga jelas dan garansi hasil perbaikan.">
+    <meta property="og:image" content="https://procycleworkshop.com/images/og-image.jpg">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MotorcycleRepair",
+        "name": "ProCycle Workshop",
+        "address": {"@type":"PostalAddress","streetAddress":"Jl. Sepeda Sejahtera No.12","addressLocality":"Kediri","addressRegion":"Jawa Timur","postalCode":"64111","addressCountry":"ID"},
+        "telephone": "+6281234567890",
+        "openingHours": "Senin-Sabtu 08:00-17:00",
+        "priceRange": "Rp",
+        "areaServed": ["Kediri","Pare","Nganjuk","Blitar"]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {--primary:#165DFF; --secondary:#FF7D00; --dark:#1E293B; --light:#F8FAFC; --gray:#94A3B8; --shadow:0 10px 30px rgba(22,93,255,0.15);}
+        *{margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif;}
+        html{scroll-behavior:smooth;}
+        body{color:var(--dark); background:#fff; line-height:1.6;}
+        .container{width:100%; max-width:1200px; margin:0 auto; padding:0 20px;}
+        
+        header{position:fixed; width:100%; top:0; left:0; background:rgba(255,255,255,0.95); backdrop-filter:blur(10px); box-shadow:0 2px 10px rgba(0,0,0,0.05); z-index:999;}
+        .nav-wrapper{display:flex; justify-content:space-between; align-items:center; padding:15px 0;}
+        .logo{font-size:24px; font-weight:700; color:var(--primary); text-decoration:none; display:flex; align-items:center; gap:8px;}
+        .nav-links{display:flex; list-style:none; gap:30px;}
+        .nav-links a{text-decoration:none; color:var(--dark); font-weight:500; transition:0.3s;}
+        .nav-links a:hover{color:var(--primary);}
+        .nav-cta{background:var(--primary); color:#fff !important; padding:10px 20px; border-radius:8px;}
+        .menu-toggle{display:none; font-size:24px; cursor:pointer;}
+        
+        .hero{padding:160px 0 100px; background:linear-gradient(135deg,#EFF6FF 0%,#F0FDF4 100%);}
+        .hero-content{display:flex; align-items:center; gap:50px; flex-wrap:wrap;}
+        .hero-text{flex:1 1 450px;}
+        .hero-text h1{font-size:48px; margin-bottom:20px;}
+        .hero-text h1 span{color:var(--primary);}
+        .hero-text p{font-size:18px; color:#475569; margin-bottom:30px;}
+        .btn{padding:14px 28px; border-radius:10px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer; transition:0.3s; font-size:16px;}
+        .btn-primary{background:var(--primary); color:#fff;}
+        .btn-primary:hover{transform:translateY(-3px); box-shadow:var(--shadow);}
+        .btn-secondary{background:#fff; color:var(--primary); border:2px solid var(--primary);}
+        
+        section{padding:80px 0;}
+        .section-header{text-align:center; margin-bottom:60px;}
+        .section-header h2{font-size:36px; margin-bottom:15px;}
+        .section-header p{color:var(--gray); max-width:600px; margin:0 auto;}
+        
+        .services-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;}
+        .service-card{background:#fff; padding:35px 25px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.05); transition:0.3s; border:1px solid #F1F5F9;}
+        .service-card:hover{transform:translateY(-8px);}
+        .service-icon{width:60px; height:60px; background:rgba(22,93,255,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:26px; color:var(--primary); margin-bottom:20px;}
+        
+        .pricing-section{background:#F8FAFC;}
+        .pricing-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px;}
+        .price-card{background:#fff; border-radius:15px; padding:35px; box-shadow:0 5px 20px rgba(0,0,0,0.05); transition:0.3s; position:relative; overflow:hidden;}
+        .price-card:hover{transform:translateY(-5px); box-shadow:0 15px 30px rgba(22,93,255,0.15);}
+        .price-card.popular{border:2px solid var(--primary);}
+        .popular-badge{position:absolute; top:20px; right:-30px; background:var(--primary); color:#fff; padding:5px 40px; transform:rotate(45deg); font-size:12px; font-weight:600;}
+        .price-header{text-align:center; margin-bottom:25px;}
+        .price-name{font-size:22px; font-weight:700; margin-bottom:10px;}
+        .price-value{font-size:32px; font-weight:800; color:var(--primary); margin-bottom:5px;}
+        .price-desc{color:var(--gray); font-size:14px;}
+        .price-features{list-style:none; margin:25px 0;}
+        .price-features li{padding:10px 0; border-bottom:1px solid #F1F5F9; display:flex; align-items:center; gap:10px;}
+        .price-features li i{color:#10B981;}
+        .price-features li.no{color:var(--gray);} .price-features li.no i{color:#EF4444;}
+        .price-card .btn{width:100%; justify-content:center; margin-top:10px;}
+        
+        .booking-wrapper{display:flex; gap:50px; flex-wrap:wrap;}
+        .booking-form{flex:1 1 500px; background:#fff; padding:40px; border-radius:15px; box-shadow:var(--shadow);}
+        .form-group{margin-bottom:20px;}
+        .form-group label{display:block; margin-bottom:8px; font-weight:500;}
+        .form-group input,.form-group select,.form-group textarea{width:100%; padding:12px 15px; border:1px solid #CBD5E1; border-radius:8px; font-size:15px;}
+        .booking-info{flex:1 1 350px; background:var(--primary); color:#fff; padding:40px; border-radius:15px;}
+        .info-item{display:flex; align-items:flex-start; gap:15px; margin-bottom:20px;}
+        
+        footer{background:var(--dark); color:#fff; padding:60px 0 20px;}
+        .footer-content{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; margin-bottom:40px;}
+        .footer-col a{color:#CBD5E1; text-decoration:none; display:block; margin-bottom:10px;}
+        .copyright{text-align:center; padding-top:20px; border-top:1px solid #334155; color:#94A3B8; font-size:14px;}
+        
+        .wa-float{position:fixed; bottom:30px; right:30px; width:60px; height:60px; background:#25D366; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; box-shadow:0 5px 20px rgba(37,211,102,0.4); z-index:998; text-decoration:none; transition:0.3s;}
+        .wa-float:hover{transform:scale(1.1);}
+        .admin-link{position:fixed; bottom:30px; left:30px; background:var(--dark); color:#fff; padding:10px 15px; border-radius:8px; text-decoration:none; font-size:14px; z-index:998;}
+        .loading{text-align:center; padding:50px; color:var(--gray); font-size:18px;}
+        
+        @media(max-width:768px){
+            .menu-toggle{display:block;}
+            .nav-links{position:fixed; top:80px; left:-100%; width:100%; height:calc(100vh - 80px); background:#fff; flex-direction:column; padding:40px 20px; transition:0.3s;}
+            .nav-links.active{left:0;}
+            .hero-text h1{font-size:32px;}
+            .section-header h2{font-size:28px;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav-wrapper">
+                <a href="#" class="logo"><i class="fa fa-bicycle"></i> ProCycle</a>
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#layanan">Layanan</a></li>
+                    <li><a href="#harga">Daftar Harga</a></li>
+                    <li><a href="#pesan" class="nav-cta">Pesan Servis</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+                <div class="menu-toggle" id="menuToggle"><i class="fa fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="beranda">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Bengkel Sepeda <span>Standar Internasional</span> di Kediri</h1>
+                    <p>Harga transparan, teknisi berpengalaman, suku cadang asli. Pesan servis kapan saja langsung ke WhatsApp kami.</p>
+                    <div style="display:flex; gap:15px; flex-wrap:wrap;">
+                        <a href="#harga" class="btn btn-secondary"><i class="fa fa-tags"></i> Lihat Harga</a>
+                        <a href="#pesan" class="btn btn-primary"><i class="fa fa-calendar-check-o"></i> Pesan Sekarang</a>
+                    </div>
+                </div>
+                <div class="hero-text"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" style="width:100%; border-radius:20px;" alt="Bengkel sepeda profesional"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="layanan">
+        <div class="container">
+            <div class="section-header">
+                <h2>Layanan Kami</h2>
+                <p>Melayani semua jenis sepeda dengan prosedur standar internasional</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card"><div class="service-icon"><i class="fa fa-wrench"></i></div><h3>Servis Rutin</h3><p>Pembersihan, pelumasan, penyetelan rem & gigi.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fa fa-exchange"></i></div><h3>Perbaikan Kerusakan</h3><p>Perbaikan rangka, roda, suspensi & penggantian part.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fa fa-magic"></i></div><h3>Modifikasi</h3><p>Performa ringan, estetika, atau penyesuaian kebutuhan.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fa fa-truck"></i></div><h3>Antar-Jemput</h3><p>Layanan penjemputan & pengantaran area Kediri.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="harga">
+        <div class="container">
+            <div class="section-header">
+                <h2>Daftar Harga Layanan</h2>
+                <p>Harga transparan tanpa biaya tersembunyi.</p>
+            </div>
+            <div class="pricing-grid" id="priceContainer">
+                <div class="loading">Memuat data harga...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-section" id="pesan">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pesan Layanan Servis</h2>
+                <p>Isi formulir, data otomatis dikirim ke WhatsApp Business kami.</p>
+            </div>
+            <div class="booking-wrapper">
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-group"><label>Nama Lengkap</label><input type="text" id="nama" required placeholder="Nama Anda"></div>
+                    <div class="form-group"><label>No. WhatsApp</label><input type="tel" id="nohp" required placeholder="0812xxxx"></div>
+                    <div class="form-group"><label>Jenis Sepeda</label><select id="jenis" required><option value="">Pilih...</option><option>MTB</option><option>Balap</option><option>Lipat</option><option>Kota</option><option>Listrik</option></select></div>
+                    <div class="form-group"><label>Pilih Paket</label><select id="paket" required><option value="">Memuat paket...</option></select></div>
+                    <div class="form-group"><label>Tanggal Kunjungan</label><input type="date" id="tanggal" required></div>
+                    <div class="form-group"><label>Keterangan</label><textarea id="keterangan" placeholder="Keluhan khusus"></textarea></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%"><i class="fa fa-whatsapp"></i> Kirim Pesanan ke WA</button>
+                </form>
+                <div class="booking-info">
+                    <h3>Informasi Bengkel</h3>
+                    <div class="info-item"><i class="fa fa-clock-o"></i><div><strong>Jam Buka</strong><p id="jamBuka">Memuat...</p></div></div>
+                    <div class="info-item"><i class="fa fa-map-marker"></i><div><strong>Lokasi</strong><p id="alamat">Memuat...</p></div></div>
+                    <div class="info-item"><i class="fa fa-shield"></i><div><strong>Garansi</strong><p>Garansi perbaikan 7 hari setelah pengambilan</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontak">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col"><h4>ProCycle Workshop</h4><p>Bengkel sepeda terpercaya di Kediri.</p></div>
+                <div class="footer-col"><h4>Kontak</h4><a href="tel:+6281234567890"><i class="fa fa-phone"></i> +62 812-3456-7890</a><a href="mailto:info@procycle.com"><i class="fa fa-envelope"></i> info@procycle.com</a></div>
+                <div class="footer-col"><h4>Tautan</h4><a href="#beranda">Beranda</a><a href="#harga">Daftar Harga</a><a href="admin.html">Pengaturan Admin</a></div>
+            </div>
+            <div class="copyright">&copy; 2026 ProCycle Workshop. Hak cipta dilindungi.</div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6281234567890?text=Halo%20ProCycle%2C%20saya%20ingin%20bertanya" target="_blank" class="wa-float"><i class="fa fa-whatsapp"></i></a>
+    <a href="admin.html" class="admin-link"><i class="fa fa-cog"></i> Pengaturan</a>
+
+    <!-- Koneksi Firebase Database Online -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script>
+        // ==== TEMPEL KONFIGURASI FIREBASE ANDA DI SINI ====
+        const firebaseConfig = {
+            apiKey: "API_KEY_ANDA",
+            authDomain: "PROYEK_ANDA.firebaseapp.com",
+            databaseURL: "https://PROYEK_ANDA-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "PROYEK_ANDA",
+            storageBucket: "PROYEK_ANDA.appspot.com",
+            messagingSenderId: "NOMOR_ID_ANDA",
+            appId: "ID_APLIKASI_ANDA"
+        };
+        // ====================================================
+
+        // Inisialisasi Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+        const ref = db.ref('konten_website');
+
+        // Data Awal Default
+        const dataDefault = {
+            jamBuka: "Senin-Sabtu: 08.00 - 17.00 | Minggu Libur",
+            alamat: "Jl. Sepeda Sejahtera No.12, Kediri",
+            daftarHarga: [
+                {nama: "Servis Ringan", harga: "Rp 35.000", desc: "Pengecekan dasar", populer: false, fitur: ["Pelumasan rantai", "Penyetelan rem", "Pengecekan ban"]},
+                {nama: "Servis Lengkap", harga: "Rp 75.000", desc: "Paling banyak dipilih", populer: true, fitur: ["Semua layanan ringan", "Bersihkan gir", "Stel gigi halus"]},
+                {nama: "Servis Premium", harga: "Rp 120.000", desc: "Perawatan maksimal", populer: false, fitur: ["Semua lengkap", "Bongkar bersih total", "Ganti oli suspensi"]}
+            ]
+        };
+
+        // Tampilkan data dari database secara realtime
+        ref.on('value', (snapshot) => {
+            const data = snapshot.val() || dataDefault;
+            document.getElementById('jamBuka').textContent = data.jamBuka;
+            document.getElementById('alamat').textContent = data.alamat;
+            
+            const wadahHarga = document.getElementById('priceContainer');
+            const pilihPaket = document.getElementById('paket');
+            wadahHarga.innerHTML = "";
+            pilihPaket.innerHTML = `<option value="">Pilih Paket Servis</option>`;
+
+            data.daftarHarga.forEach(paket => {
+                const kartu = document.createElement('div');
+                kartu.className = `price-card ${paket.popular ? 'popular' : ''}`;
+                kartu.innerHTML = `
+                    ${paket.popular ? '<div class="popular-badge">PALING DIPILIH</div>' : ''}
+                    <div class="price-header">
+                        <h3 class="price-name">${paket.nama}</h3>
+                        <div class="price-value">${paket.harga}</div>
+                        <p class="price-desc">${paket.desc}</p>
+                    </div>
+                    <ul class="price-features">
+                        ${paket.fitur.map(f => `<li><i class="fa fa-check-circle"></i> ${f}</li>`).join('')}
+                    </ul>
+                    <a href="#pesan" class="btn btn-primary">Pilih Paket Ini</a>
+                `;
+                wadahHarga.appendChild(kartu);
+                pilihPaket.innerHTML += `<option value="${paket.nama} - ${paket.harga}">${paket.nama} (${paket.harga})</option>`;
+            });
+        });
+
+        // Menu Mobile & Form WhatsApp
+        document.getElementById('menuToggle').addEventListener('click', ()=>document.getElementById('navMenu').classList.toggle('active'));
+        document.getElementById('bookingForm').addEventListener('submit', e=>{
+            e.preventDefault();
+            const pesan = `*PESANAN SERVIS SEPEDA*\n\nNama: ${document.getElementById('nama').value}\nNo. WA: ${document.getElementById('nohp').value}\nJenis Sepeda: ${document.getElementById('jenis').value}\nPaket Layanan: ${document.getElementById('paket').value}\nTanggal Kunjungan: ${document.getElementById('tanggal').value}\n\nKeterangan Tambahan:\n${document.getElementById('keterangan').value || '-'}
+
+Mohon konfirmasi ketersediaan. Terima kasih.`;
+            window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(pesan)}`, '_blank');
+        });
+    </script>
+</body>
+</html>
