@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Admin - Database Online</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif;}
+        body{background:#F8FAFC; padding:30px 20px; max-width:900px; margin:0 auto;}
+        .page-header{text-align:center; margin-bottom:40px;}
+        .page-header h1{color:#165DFF; margin-bottom:10px;}
+        .card{background:#fff; border-radius:15px; padding:30px; margin-bottom:25px; box-shadow:0 5px 20px rgba(0,0,0,0.05);}
+        .card h3{margin-bottom:20px; color:#1E293B; border-bottom:1px solid #E2E8F0; padding-bottom:10px;}
+        .form-group{margin-bottom:18px;}
+        label{display:block; margin-bottom:6px; font-weight:500; color:#334155;}
+        input,textarea,select{width:100%; padding:12px; border:1px solid #CBD5E1; border-radius:8px; font-size:15px;}
+        .btn{padding:12px 24px; border:none; border-radius:8px; font-weight:600; cursor:pointer; transition:0.3s; font-size:15px; margin-right:10px; margin-top:10px;}
+        .btn-primary{background:#165DFF; color:#fff;}
+        .btn-success{background:#10B981; color:#fff;}
+        .btn-danger{background:#EF4444; color:#fff;}
+        .paket-item{border:1px solid #E2E8F0; border-radius:10px; padding:18px; margin-bottom:15px; background:#FAFBFC;}
+        .fitur-input{display:flex; gap:10px; margin-bottom:8px;}
+        .fitur-input input{flex:1;}
+        .login-box{max-width:400px; margin:50px auto; text-align:center; padding:30px; background:#fff; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.05);}
+        .login-box input{text-align:center; font-size:18px; margin-bottom:15px;}
+        .alert{padding:12px; border-radius:8px; margin-bottom:15px; display:none;}
+        .alert.sukses{background:#D1FAE5; color:#065F46;}
+        .alert.error{background:#FEE2E2; color:#991B1B;}
+    </style>
+</head>
+<body>
+    <div class="login-box" id="halamanLogin">
+        <h2>Masuk Pengaturan Admin</h2>
+        <p style="margin:15px 0; color:#64748B;">Masukkan kata sandi untuk mengubah data</p>
+        <input type="password" id="passAdmin" placeholder="Kata sandi admin">
+        <br><button class="btn btn-primary" onclick="cekLogin()">Masuk Sekarang</button>
+        <p style="margin-top:20px; font-size:13px; color:#94A3B8;">Sandi awal: <b>bengkel123</b></p>
+    </div>
+
+    <div id="halamanAdmin" style="display:none;">
+        <div class="page-header">
+            <h1><i class="fa fa-database"></i> Pengaturan Database Online</h1>
+            <p>Perubahan akan langsung tampil di seluruh pengunjung website</p>
+            <a href="index.html" style="display:inline-block; margin-top:10px; color:#165DFF;"><i class="fa fa-arrow-left"></i> Kembali ke Website</a>
+        </div>
+
+        <div class="alert sukses" id="pesanSukses"><i class="fa fa-check-circle"></i> Data berhasil disimpan ke database!</div>
+        <div class="alert error" id="pesanError"><i class="fa fa-exclamation-triangle"></i> Gagal menyimpan data!</div>
+
+        <div class="card">
+            <h3>Informasi Umum Bengkel</h3>
+            <div class="form-group">
+                <label>Jam Operasional</label>
+                <input type="text" id="inputJam" placeholder="Contoh: Senin-Sabtu 08.00 - 17.00">
+            </div>
+            <div class="form-group">
+                <label>Alamat Lengkap Bengkel</label>
+                <input type="text" id="inputAlamat" placeholder="Masukkan alamat lengkap">
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Daftar Paket & Harga Layanan</h3>
+            <div id="wadahPaket"></div>
+            <button class="btn btn-primary" onclick="tambahPaketBaru()"><i class="fa fa-plus"></i> Tambah Paket Layanan</button>
+        </div>
+
+        <div style="text-align:center; margin-top:30px;">
+            <button class="btn btn-success" onclick="simpanKeDatabase()"><i class="fa fa-cloud-upload"></i> Simpan Semua Perubahan</button>
+            <button class="btn btn-danger" onclick="keluarAkun()"><i class="fa fa-sign-out"></i> Keluar</button>
+        </div>
+    </div>
+
+    <!-- Koneksi Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script>
+        // ==== TEMPEL KONFIGURASI FIREBASE YANG SAMA DI SINI ====
+        const firebaseConfig = {
+            apiKey: "API_KEY_ANDA",
+            authDomain: "PROYEK_ANDA.firebaseapp.com",
+            databaseURL: "https://PROYEK_ANDA-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "PROYEK_ANDA",
+            storageBucket: "PROYEK_ANDA.appspot.com",
+            messagingSenderId: "NOMOR_ID_ANDA",
+            appId: "ID_APLIKASI_ANDA"
+        };
+        // =========================================================
+
+        const SANDI_ADMIN = "bengkel123"; // Ubah sandi sesuai keinginan
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+        const ref = db.ref('konten_website');
+
+        function cekLogin(){
+            const sandi = document.getElementById('passAdmin').value;
+            if(sandi === SANDI_ADMIN){
+                document.getElementById('halamanLogin').style.display = 'none';
+                document.getElementById('halamanAdmin').style.display = 'block';
+                muatDataDariServer();
+            }else{
+                alert("Kata sandi salah, coba lagi!");
+            }
+        }
+
+        function muatDataDariServer(){
+            ref.once('value').then((snapshot) => {
+                const data = snapshot.val() || {
+                    jamBuka: "Senin-Sabtu: 08.00 - 17.00 | Minggu Libur",
+                    alamat: "Jl. Sepeda Sejahtera No.12, Kediri",
+                    daftarHarga: [
+                        {nama: "Servis Ringan", harga: "Rp 35.000", desc: "Pengecekan dasar", populer: false, fitur: ["Pelumasan rantai", "Penyetelan rem", "Pengecekan ban"]},
+                        {nama: "Servis Lengkap", harga: "Rp 75.000", desc: "Paling banyak dipilih", populer: true, fitur: ["Semua layanan ringan", "Bersihkan gir", "Stel gigi halus"]},
+                        {nama: "Servis Premium", harga: "Rp 120.000", desc: "Perawatan maksimal", populer: false, fitur: ["Semua lengkap", "Bongkar bersih total", "Ganti oli suspensi"]}
+                    ]
+                };
+                document.getElementById('inputJam').value = data.jamBuka;
+                document.getElementById('inputAlamat').value = data.alamat;
+                tampilkanFormPaket(data.daftarHarga);
+            });
+        }
+
+        function tampilkanFormPaket(listPaket){
+            const wadah = document.getElementById('wadahPaket');
+            wadah.innerHTML = "";
+            listPaket.forEach((paket, indeks) => {
+                const elemen = document.createElement('div');
+                elemen.className = "paket-item";
+                elemen.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                        <h4>Paket ${indeks + 1}</h4>
+                        <button class="btn btn-danger" style="padding:6px 12px; font-size:13px;" onclick="hapusPaket(${indeks})"><i class="fa fa-trash"></i> Hapus</button>
+                    </div>
+                    <div class="form-group"><label>Nama Paket Layanan</label><input type="text" class="namaPaket" value="${paket.nama}"></div>
+                    <div class="form-group"><label>Harga Paket</label><input type="text" class="hargaPaket" value="${paket.harga}"></div>
+                    <div class="form-group"><label>Deskripsi Singkat</label><input type="text" class="descPaket" value="${paket.desc}"></div>
+                    <div class="form-group"><label>Tampilkan Sebagai Paket Populer?</label>
+                        <select class="populerPaket">
+                            <option value="true" ${paket.popular ? 'selected' : ''}>Ya, tampilkan sebagai populer</option>
+                            <option value="false" ${paket.popular ? '' : 'selected'}>Tidak</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Daftar Fitur Layanan</label>
+                        <div class="daftarFitur">
+                            ${paket.fitur.map(f => `<div class="fitur-input"><input type="text" class="inputFitur" value="${f}"><button class="btn btn-danger" style="padding:8px 12px;" onclick="this.parentElement.remove()"><i class="fa fa-times"></i></button></div>`).join('')}
+                        </div>
+                        <button class="btn btn-primary" style="padding:8px 12px; font-size:13px; margin-top:5px;" onclick="tambahKolomFitur(this)"><i class="fa fa-plus"></i> Tambah Fitur Baru</button>
+                    </div>
+                `;
+                wadah.appendChild(elemen);
+            });
+        }
+
+        function tambahPaketBaru(){
+            ref.once('value').then(snap => {
+                const data = snap.val() || {};
+                const daftar = data.daftarHarga || [];
+                daftar.push({nama:"Paket Baru", harga:"Rp 0", desc:"Deskripsi paket", populer:false, fitur:["Fitur layanan"]});
+                tampilkanFormPaket(daftar);
+            });
+        }
+
+        function hapusPaket(indeks){
+            if(confirm("Yakin ingin menghapus paket ini?")){
+                ref.once('value').then(snap => {
+                    const data = snap.val();
+                    data.daftarHarga.splice(indeks, 1);
+                    tampilkanFormPaket(data.daftarHarga);
+                });
+            }
+        }
+
+        function tambahKolomFitur(tombol){
+            const wadah = tombol.previousElementSibling;
+            wadah.innerHTML += `<div class="fitur-input"><input type="text" class="inputFitur" placeholder="Nama fitur layanan"><button class="btn btn-danger" style="padding:8px 12px;" onclick="this.parentElement.remove()"><i class="fa fa-times"></i></button></div>`;
+        }
+
+        function ambilDataDariForm(){
+            const daftarPaket = [];
+            document.querySelectorAll('.paket-item').forEach(el => {
+                const fitur = Array.from(el.querySelectorAll('.inputFitur')).map(i => i.value).filter(v => v.trim() !== "");
+                daftarPaket.push({
+                    nama: el.querySelector('.namaPaket').value,
+                    harga: el.querySelector('.hargaPaket').value,
+                    desc: el.querySelector('.descPaket').value,
+                    populer: el.querySelector('.populerPaket').value === "true",
+                    fitur: fitur
+                });
+            });
+            return {
+                jamBuka: document.getElementById('inputJam').value,
+                alamat: document.getElementById('inputAlamat').value,
+                daftarHarga: daftarPaket
+            };
+        }
+
+        function simpanKeDatabase(){
+            const dataBaru = ambilDataDariForm();
+            ref.set(dataBaru)
+            .then(() => {
+                document.getElementById('pesanSukses').style.display = 'block';
+                document.getElementById('pesanError').style.display = 'none';
+                setTimeout(() => document.getElementById('pesanSukses').style.display = 'none', 4000);
+            })
+            .catch((error) => {
+                document.getElementById('pesanError').style.display = 'block';
+                document.getElementById('pesanError').innerHTML = `<i class="fa fa-exclamation-triangle"></i> Error: ${error.message}`;
+                setTimeout(() => document.getElementById('pesanError').style.display = 'none', 5000);
+            });
+        }
+
+        function keluarAkun(){
+            if(confirm("Yakin ingin keluar dari halaman admin?")){
+                document.getElementById('halamanAdmin').style.display = 'none';
+                document.getElementById('halamanLogin').style.display = 'block';
+                document.getElementById('passAdmin').value = "";
+            }
+        }
+    </script>
+</body>
+</html>
