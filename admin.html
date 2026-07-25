@@ -86,14 +86,14 @@
         const ref = db.ref('konten_website');
 
         function cekSandi(){
-            const sandi = document.getElementById('sandiAdmin').value;
-            if(sandi === SANDI_ADMIN){
+            //const sandi = document.getElementById('sandiAdmin').value;
+            //if(sandi === SANDI_ADMIN){
                 document.getElementById('halamanLogin').classList.add('sembunyi');
                 document.getElementById('halamanAdmin').classList.remove('sembunyi');
                 ambilData();
-            }else{
-                alert("Kata sandi salah!");
-            }
+            //}else{
+                //alert("Kata sandi salah!");
+            //}
         }
 
         function ambilData(){
